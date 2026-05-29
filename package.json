@@ -1,0 +1,17 @@
+{
+  "name": "missionguard-ai",
+  "private": true,
+  "workspaces": ["apps/web", "packages/shared"],
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "type-check": "turbo type-check"
+  },
+  "devDependencies": {
+    "turbo": "^2.5.4"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

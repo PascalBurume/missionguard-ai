@@ -1,0 +1,30 @@
+[project]
+name = "missionguard-api"
+version = "0.1.0"
+description = "MissionGuard AI – FastAPI backend"
+requires-python = ">=3.12"
+dependencies = [
+  "fastapi>=0.115",
+  "uvicorn[standard]>=0.32",
+  "pydantic>=2.10",
+  "pydantic-settings>=2.6",
+  "sqlalchemy>=2.0",
+  "asyncpg>=0.30",
+  "alembic>=1.14",
+  "langchain>=0.3",
+  "langchain-anthropic>=0.3",
+  "langgraph>=0.3",
+  "unstructured[pdf]>=0.16",
+  "python-multipart>=0.0.18",
+  "celery[redis]>=5.4",
+  "redis>=5.2",
+  "httpx>=0.28",
+  "python-jose[cryptography]>=3.3",
+  "tenacity>=9.0",
+  "missionguard-ai",
+  "aiosqlite>=0.22.1",
+  "greenlet>=3.5.0",
+]
+
+[tool.uv.sources]
+missionguard-ai = { workspace = true }

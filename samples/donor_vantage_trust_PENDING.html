@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Donor Offer — Vantage Trust Initiative · PENDING ANALYSIS</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', sans-serif; background: #FDFBF7; color: #292524; padding: 48px; max-width: 720px; margin: 0 auto; }
+
+  /* ── Pending pulse badge ── */
+  .badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: #F8F4FF; color: #7c3aed;
+    border: 1px solid #ddd6fe; border-radius: 999px;
+    font-size: 11px; font-weight: 600; letter-spacing: .05em;
+    padding: 5px 14px;
+  }
+  .pulse-dot {
+    width: 8px; height: 8px; border-radius: 50%; background: #8b5cf6;
+    animation: pulse 1.4s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.75)} }
+
+  header { border-bottom: 2px solid #E7E5E4; padding-bottom: 24px; margin-bottom: 28px; }
+  .org { font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: #78716C; margin-bottom: 6px; }
+  h1 { font-size: 26px; font-weight: 700; line-height: 1.25; color: #1C1917; margin-bottom: 14px; }
+
+  /* ── Awaiting analysis banner ── */
+  .awaiting-banner {
+    background: linear-gradient(135deg, #F5F0FF 0%, #EDE9FE 100%);
+    border: 1.5px dashed #a78bfa; border-radius: 12px;
+    padding: 16px 20px; margin-bottom: 28px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .awaiting-icon { font-size: 28px; flex-shrink: 0; }
+  .awaiting-title { font-size: 13px; font-weight: 700; color: #5b21b6; margin-bottom: 2px; }
+  .awaiting-sub { font-size: 12px; color: #7c3aed; }
+
+  .meta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 24px; }
+  .meta-item { background: #F5F5F4; border-radius: 10px; padding: 12px 16px; }
+  .meta-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: #A8A29E; margin-bottom: 3px; }
+  .meta-value { font-size: 14px; font-weight: 600; color: #292524; }
+  .meta-value.amount { color: #7c3aed; font-size: 18px; }
+
+  .body-text { font-size: 14px; line-height: 1.8; color: #44403C; margin-bottom: 24px; }
+  .body-text strong { color: #292524; font-weight: 600; }
+
+  /* ── Conditions with mixed signals ── */
+  .conditions { background: #FAFAF9; border: 1px solid #E7E5E4; border-radius: 12px; padding: 20px 24px; margin-bottom: 20px; }
+  .conditions h3 { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: #57534E; margin-bottom: 14px; }
+  .condition-row { display: flex; align-items: flex-start; gap: 10px; padding: 9px 0; border-bottom: 1px solid #F0EFEE; font-size: 13px; color: #44403C; line-height: 1.6; }
+  .condition-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .signal { font-size: 15px; flex-shrink: 0; margin-top: 1px; }
+
+  /* ── Open questions ── */
+  .questions { background: #FFFDF7; border: 1px solid #FDE68A; border-radius: 12px; padding: 20px 24px; margin-bottom: 24px; }
+  .questions h3 { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: #92400e; margin-bottom: 14px; }
+  .questions ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+  .questions li { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; color: #44403C; line-height: 1.6; }
+  .questions li::before { content: '?'; font-weight: 800; color: #f59e0b; flex-shrink: 0; width: 16px; text-align: center; }
+
+  /* ── Intake metadata ── */
+  .intake-row { display: flex; gap: 12px; margin-bottom: 28px; flex-wrap: wrap; }
+  .intake-chip { background: #F5F5F4; border-radius: 8px; padding: 7px 14px; font-size: 12px; color: #57534E; }
+  .intake-chip span { font-weight: 600; color: #292524; }
+
+  /* ── Signature area ── */
+  .signature { border-top: 1px solid #E7E5E4; padding-top: 20px; display: flex; justify-content: space-between; align-items: flex-end; }
+  .sig-name { font-weight: 700; font-size: 15px; }
+  .sig-title { font-size: 12px; color: #78716C; margin-top: 2px; }
+  .verdict-pending {
+    font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+    background: #F5F0FF; color: #7c3aed;
+    border: 1px solid #ddd6fe; border-radius: 8px;
+    padding: 6px 14px; display: flex; align-items: center; gap: 6px;
+  }
+
+  @media print {
+    body { padding: 32px; background: white; }
+    .badge, .awaiting-banner, .conditions, .questions { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .pulse-dot { animation: none; background: #8b5cf6; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="org">Donor Offer Document · MissionGuard AI Test Case #4</div>
+  <h1>Gift Proposal — Vantage Trust Initiative</h1>
+  <div class="badge"><span class="pulse-dot"></span> AWAITING PLATFORM ANALYSIS</div>
+</header>
+
+<!-- Awaiting banner -->
+<div class="awaiting-banner">
+  <div class="awaiting-icon">🔍</div>
+  <div>
+    <div class="awaiting-title">No Decision Taken — Submit for Ethical Scoring</div>
+    <div class="awaiting-sub">This offer has been received and logged. Verdict pending MissionGuard AI analysis across all 5 ethical lenses.</div>
+  </div>
+</div>
+
+<div class="meta-grid">
+  <div class="meta-item">
+    <div class="meta-label">Donor</div>
+    <div class="meta-value">Vantage Trust Initiative</div>
+  </div>
+  <div class="meta-item">
+    <div class="meta-label">Gift Amount</div>
+    <div class="meta-value amount">$800,000</div>
+  </div>
+  <div class="meta-item">
+    <div class="meta-label">Recipient</div>
+    <div class="meta-value">MissionGuard AI — Community Equity Fund</div>
+  </div>
+  <div class="meta-item">
+    <div class="meta-label">Date Received</div>
+    <div class="meta-value">April 25, 2026</div>
+  </div>
+</div>
+
+<p class="body-text">
+  The Vantage Trust Initiative hereby proposes a <strong>$800,000 restricted grant</strong>
+  payable over two years to support MissionGuard AI's Central Valley operations.
+  The donor describes itself as a <strong>philanthropic arm of a diversified family office</strong>
+  with interests in real estate, renewable energy, and impact investing. No public 990 filings
+  are available as the entity is structured as a Delaware LLC, not a foundation.
+</p>
+
+<div class="conditions">
+  <h3>Stated Terms — Mixed Signals</h3>
+  <div class="condition-row"><span class="signal">✅</span> Funds restricted to direct program delivery costs (no overhead cap stated).</div>
+  <div class="condition-row"><span class="signal">✅</span> No naming rights or branding requested.</div>
+  <div class="condition-row"><span class="signal">✅</span> No board seat or formal governance role requested.</div>
+  <div class="condition-row"><span class="signal">⚠️</span> Donor requests a <strong>private bi-annual briefing</strong> with the Executive Director on program outcomes — not a formal governance role, but scope undefined.</div>
+  <div class="condition-row"><span class="signal">⚠️</span> Grant agreement contains a <strong>clawback clause</strong>: full repayment if recipient "takes public positions inconsistent with donor values" — values document not yet provided.</div>
+  <div class="condition-row"><span class="signal">❓</span> Donor lists a named <strong>political action committee</strong> under the same family office umbrella — relationship to this gift unclear.</div>
+</div>
+
+<div class="questions">
+  <h3>Open Questions for Platform Analysis</h3>
+  <ul>
+    <li>Does the clawback clause constitute a restriction on the recipient's advocacy independence?</li>
+    <li>Are private Executive Director briefings a de-facto governance influence mechanism?</li>
+    <li>Does the PAC affiliation create a reputational or regulatory conflict of interest?</li>
+    <li>Is the LLC structure (vs. registered foundation) a transparency red flag under IRS gift policies?</li>
+    <li>Does the undefined "donor values" language in the clawback create undue influence risk?</li>
+  </ul>
+</div>
+
+<div class="intake-row">
+  <div class="intake-chip">Logged by: <span>Intake Coordinator</span></div>
+  <div class="intake-chip">Source: <span>Direct solicitation</span></div>
+  <div class="intake-chip">Status: <span>Pending analysis</span></div>
+  <div class="intake-chip">Priority: <span>High — 30-day deadline</span></div>
+</div>
+
+<div class="signature">
+  <div>
+    <div class="sig-name">R. Solano</div>
+    <div class="sig-title">Managing Director · Vantage Trust Initiative</div>
+  </div>
+  <div class="verdict-pending">⏳ PENDING · Platform to decide</div>
+</div>
+
+</body>
+</html>

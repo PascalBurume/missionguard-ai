@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Donor Offer — Sierra Meridian Family Fund · PENDING ANALYSIS</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', sans-serif; background: #FDFBF7; color: #292524; padding: 48px; max-width: 760px; margin: 0 auto; }
+
+  .badge { display: inline-flex; align-items: center; gap: 8px; background: #F5F0FF; color: #7c3aed; border: 1px solid #ddd6fe; border-radius: 999px; font-size: 11px; font-weight: 600; letter-spacing: .05em; padding: 5px 14px; }
+  .pulse-dot { width: 8px; height: 8px; border-radius: 50%; background: #8b5cf6; animation: pulse 1.4s ease-in-out infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.75)} }
+
+  header { border-bottom: 2px solid #E7E5E4; padding-bottom: 24px; margin-bottom: 28px; }
+  .org { font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: #78716C; margin-bottom: 6px; }
+  h1 { font-size: 26px; font-weight: 700; line-height: 1.25; color: #1C1917; margin-bottom: 14px; }
+
+  .awaiting-banner { background: linear-gradient(135deg, #F5F0FF 0%, #EDE9FE 100%); border: 1.5px dashed #a78bfa; border-radius: 12px; padding: 16px 20px; margin-bottom: 28px; display: flex; align-items: center; gap: 14px; }
+  .awaiting-icon { font-size: 28px; flex-shrink: 0; }
+  .awaiting-title { font-size: 13px; font-weight: 700; color: #5b21b6; margin-bottom: 2px; }
+  .awaiting-sub { font-size: 12px; color: #7c3aed; }
+
+  .meta-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 24px; }
+  .meta-item { background: #F5F5F4; border-radius: 10px; padding: 12px 16px; }
+  .meta-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: #A8A29E; margin-bottom: 3px; }
+  .meta-value { font-size: 13px; font-weight: 600; color: #292524; }
+  .meta-value.amount { color: #7c3aed; font-size: 17px; }
+
+  h2 { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: #57534E; margin-bottom: 12px; }
+  .section { margin-bottom: 24px; }
+
+  .body-text { font-size: 14px; line-height: 1.8; color: #44403C; }
+  .body-text strong { color: #292524; font-weight: 600; }
+
+  /* Timeline */
+  .timeline { position: relative; padding-left: 24px; margin-bottom: 24px; }
+  .timeline::before { content: ''; position: absolute; left: 6px; top: 6px; bottom: 6px; width: 2px; background: #E7E5E4; }
+  .tl-item { position: relative; margin-bottom: 16px; }
+  .tl-item:last-child { margin-bottom: 0; }
+  .tl-dot { position: absolute; left: -21px; top: 4px; width: 10px; height: 10px; border-radius: 50%; background: #8b5cf6; border: 2px solid #FDFBF7; }
+  .tl-date { font-size: 11px; font-weight: 700; color: #7c3aed; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 2px; }
+  .tl-text { font-size: 13px; color: #44403C; line-height: 1.5; }
+
+  /* Conditions */
+  .conditions { background: #FAFAF9; border: 1px solid #E7E5E4; border-radius: 12px; padding: 20px 24px; margin-bottom: 20px; }
+  .condition-row { display: flex; align-items: flex-start; gap: 10px; padding: 10px 0; border-bottom: 1px solid #F0EFEE; font-size: 13px; color: #44403C; line-height: 1.6; }
+  .condition-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .signal { font-size: 15px; flex-shrink: 0; margin-top: 1px; }
+  .condition-detail { font-size: 11px; color: #78716C; margin-top: 3px; }
+
+  /* Verbatim clause */
+  .clause-block { background: #F8F0FF; border-left: 3px solid #a78bfa; border-radius: 0 10px 10px 0; padding: 14px 18px; margin: 10px 0 20px 0; font-size: 13px; color: #44403C; line-height: 1.7; font-style: italic; }
+  .clause-block strong { font-style: normal; color: #5b21b6; }
+
+  /* Family stakeholder table */
+  .stakeholders { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 24px; }
+  .stakeholders thead tr { background: #F5F5F4; }
+  .stakeholders th { text-align: left; padding: 10px 14px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: #78716C; }
+  .stakeholders td { padding: 10px 14px; border-bottom: 1px solid #F0EFEE; color: #44403C; vertical-align: top; }
+  .stakeholders tr:last-child td { border-bottom: none; }
+  .role-chip { display: inline-block; background: #F5F5F4; border-radius: 6px; padding: 2px 8px; font-size: 11px; font-weight: 600; color: #57534E; }
+  .concern { font-size: 11px; color: #dc2626; margin-top: 3px; }
+
+  /* Questions */
+  .questions { background: #FFFDF7; border: 1px solid #FDE68A; border-radius: 12px; padding: 20px 24px; margin-bottom: 24px; }
+  .questions ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+  .questions li { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; color: #44403C; line-height: 1.6; }
+  .questions li::before { content: '?'; font-weight: 800; color: #f59e0b; flex-shrink: 0; width: 16px; text-align: center; }
+
+  .intake-row { display: flex; gap: 10px; margin-bottom: 28px; flex-wrap: wrap; }
+  .intake-chip { background: #F5F5F4; border-radius: 8px; padding: 7px 14px; font-size: 12px; color: #57534E; }
+  .intake-chip span { font-weight: 600; color: #292524; }
+
+  .signature { border-top: 1px solid #E7E5E4; padding-top: 20px; display: flex; justify-content: space-between; align-items: flex-end; }
+  .sig-name { font-weight: 700; font-size: 15px; }
+  .sig-title { font-size: 12px; color: #78716C; margin-top: 2px; }
+  .verdict-pending { font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; background: #F5F0FF; color: #7c3aed; border: 1px solid #ddd6fe; border-radius: 8px; padding: 6px 14px; display: flex; align-items: center; gap: 6px; }
+
+  @media print {
+    body { padding: 32px; background: white; }
+    .badge, .awaiting-banner, .conditions, .questions, .clause-block { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .pulse-dot { animation: none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="org">Donor Offer Document · MissionGuard AI Test Case #6 · PENDING ANALYSIS</div>
+  <h1>Restricted Gift Agreement<br/>Sierra Meridian Family Fund</h1>
+  <div class="badge"><span class="pulse-dot"></span>AWAITING PLATFORM ANALYSIS — NO DECISION TAKEN</div>
+</header>
+
+<div class="awaiting-banner">
+  <div class="awaiting-icon">🔍</div>
+  <div>
+    <div class="awaiting-title">Submitted for Ethical Scoring — Verdict Unknown</div>
+    <div class="awaiting-sub">Offer received April 20, 2026. Donor relationship is 6 years old. Board is under pressure to accept. MissionGuard AI analysis must complete before any vote.</div>
+  </div>
+</div>
+
+<div class="meta-grid">
+  <div class="meta-item"><div class="meta-label">Donor Entity</div><div class="meta-value">Sierra Meridian Family Fund</div></div>
+  <div class="meta-item"><div class="meta-label">Total Gift Value</div><div class="meta-value amount">$3,750,000</div></div>
+  <div class="meta-item"><div class="meta-label">Gift Structure</div><div class="meta-value">Restricted — Named Endowment</div></div>
+  <div class="meta-item"><div class="meta-label">Recipient Program</div><div class="meta-value">Central Valley Rural Health Access Initiative</div></div>
+  <div class="meta-item"><div class="meta-label">Date Received</div><div class="meta-value">April 20, 2026</div></div>
+  <div class="meta-item"><div class="meta-label">Response Deadline</div><div class="meta-value">May 30, 2026</div></div>
+</div>
+
+<!-- Background narrative -->
+<div class="section">
+  <h2>Context &amp; Relationship History</h2>
+  <p class="body-text">
+    The Sierra Meridian Family Fund has been a recurring donor to MissionGuard AI since 2020,
+    contributing a cumulative <strong>$940,000 across 4 prior grants</strong> — all unrestricted and
+    without incident. This proposal represents a <strong>significant escalation in gift size and
+    conditions</strong>, coinciding with a recent change in the Fund's leadership (founder retired;
+    now managed by second-generation family members with different strategic priorities).
+    The new managing trustee, Dominic Alvarado-Serra, has explicitly stated that this
+    gift is intended to <strong>"anchor the family's legacy in the region"</strong> and expects
+    commensurate recognition and influence.
+  </p>
+</div>
+
+<!-- Donor family stakeholders -->
+<div class="section">
+  <h2>Key Stakeholders — Family Fund Leadership</h2>
+  <table class="stakeholders">
+    <thead><tr><th>Name</th><th>Role</th><th>Notes / Potential Concern</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>Dominic Alvarado-Serra</strong></td>
+        <td><span class="role-chip">Managing Trustee</span></td>
+        <td>Took over 2025. Has expressed desire for advisory board seat. <div class="concern">⚠ Explicitly linked gift size to governance access in email dated April 9.</div></td>
+      </tr>
+      <tr>
+        <td><strong>Catalina Serra-White</strong></td>
+        <td><span class="role-chip">Co-Trustee</span></td>
+        <td>Serves on the board of a competing regional nonprofit. Potential conflict of interest if given program oversight.</td>
+      </tr>
+      <tr>
+        <td><strong>Rafe Alvarado</strong></td>
+        <td><span class="role-chip">Family Advisor</span></td>
+        <td>Attorney — listed in gift agreement as arbitrator for any disputes. No independent third party identified. <div class="concern">⚠ Conflict: family member as dispute resolver.</div></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Disbursement timeline -->
+<div class="section">
+  <h2>Disbursement Timeline</h2>
+  <div class="timeline">
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">August 2026</div><div class="tl-text">$1,250,000 — Upon signing + naming ceremony held within 60 days</div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">January 2027</div><div class="tl-text">$750,000 — Upon submission of Year 1 report + approval by donor liaison</div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">January 2028</div><div class="tl-text">$750,000 — Following joint program review (donor selects 1 of 3 evaluators)</div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">January 2029</div><div class="tl-text">$500,000 — On satisfactory completion of media deliverables (see Section 11)</div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">January 2030</div><div class="tl-text">$500,000 — Final tranche, subject to endowment naming review</div></div>
+  </div>
+</div>
+
+<!-- Conditions with signals -->
+<div class="section">
+  <h2>Terms &amp; Conditions — Mixed Signals</h2>
+  <div class="conditions">
+    <div class="condition-row"><span class="signal">✅</span><div>No restriction on program staffing decisions.<div class="condition-detail">Recipient retains full HR authority.</div></div></div>
+    <div class="condition-row"><span class="signal">✅</span><div>Funds restricted to program delivery — no diversion to general operations.</div></div>
+    <div class="condition-row"><span class="signal">⚠️</span><div>Program to be renamed the <strong>"Alvarado-Serra Rural Health Access Initiative"</strong> for the full endowment term (perpetual).<div class="condition-detail">Naming survives gift term — persists in perpetuity even after funds are spent.</div></div></div>
+    <div class="condition-row"><span class="signal">⚠️</span><div>Donor liaison (family-appointed) has <strong>30-day review right</strong> over any program reports before external publication.<div class="condition-detail">Liaison may request revisions. No veto stated — but no clear rejection mechanism either.</div></div></div>
+    <div class="condition-row"><span class="signal">⚠️</span><div>Section 11 requires production of <strong>a 20-minute documentary film</strong> featuring the Alvarado-Serra family's philanthropy history, to be delivered by Year 4.<div class="condition-detail">Film to be distributed through recipient's channels. Production costs covered by gift.</div></div></div>
+    <div class="condition-row"><span class="signal">⚠️</span><div>Donor retains <strong>"advisory input"</strong> rights over selection of the program's community advisory council members.<div class="condition-detail">Not a veto — but informal influence over community governance structure.</div></div></div>
+    <div class="condition-row"><span class="signal">❓</span><div>Dispute resolution handled exclusively by <strong>Rafe Alvarado</strong> (family attorney) as sole arbitrator — no independent third party option.<div class="condition-detail">Arbitration clause waives recipient's right to litigation.</div></div></div>
+    <div class="condition-row"><span class="signal">❓</span><div>Gift agreement includes a <strong>right-of-first-refusal</strong> for the family to make matching contributions to any capital campaign launched within 5 years, contingent on "mutually agreeable terms."</div></div>
+  </div>
+
+  <div class="clause-block">
+    <strong>Section 14.2 — "Legacy Stewardship" (Verbatim):</strong><br/>
+    "In recognition of the generational nature of this gift, Recipient agrees to consult with the Alvarado-Serra family on any programmatic changes that materially alter the scope, geography, or beneficiary population of the named initiative. Such consultation shall occur no less than 90 days prior to implementation of any such change."
+  </div>
+</div>
+
+<!-- Open questions -->
+<div class="section">
+  <h2>Open Questions for Platform Analysis</h2>
+  <div class="questions">
+    <ul>
+      <li>Does perpetual naming of a program (beyond gift term) create an undue and irremovable association with a donor family?</li>
+      <li>Does the documentary film requirement cross the line from recognition into promotional use of the recipient's platform and credibility?</li>
+      <li>Does Section 14.2's 90-day pre-consultation requirement give the family de-facto veto power over programmatic evolution?</li>
+      <li>Is an arbitration clause with a family member as sole arbitrator enforceable, and does it create an inherently unfair dispute resolution process?</li>
+      <li>Does donor input on advisory council membership compromise community governance independence?</li>
+      <li>Does Co-Trustee Catalina Serra-White's board role at a competing nonprofit create a conflict that disqualifies this offer under ethics policy?</li>
+      <li>Has the shift from prior unrestricted giving to highly conditioned giving with this new leadership changed the ethical risk profile of the donor relationship?</li>
+    </ul>
+  </div>
+</div>
+
+<div class="intake-row">
+  <div class="intake-chip">Logged by: <span>Executive Director</span></div>
+  <div class="intake-chip">Source: <span>6-year donor — escalated ask</span></div>
+  <div class="intake-chip">Status: <span>Pending analysis</span></div>
+  <div class="intake-chip">Board pressure: <span>High</span></div>
+  <div class="intake-chip">Deadline: <span>May 30, 2026</span></div>
+</div>
+
+<div class="signature">
+  <div>
+    <div class="sig-name">Dominic Alvarado-Serra</div>
+    <div class="sig-title">Managing Trustee · Sierra Meridian Family Fund</div>
+  </div>
+  <div class="verdict-pending">⏳ PENDING · Platform to decide</div>
+</div>
+
+</body>
+</html>

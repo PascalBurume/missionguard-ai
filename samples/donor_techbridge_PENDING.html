@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Donor Offer — TechBridge Ventures Foundation · PENDING ANALYSIS</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', sans-serif; background: #FDFBF7; color: #292524; padding: 48px; max-width: 760px; margin: 0 auto; }
+
+  .badge { display: inline-flex; align-items: center; gap: 8px; background: #F5F0FF; color: #7c3aed; border: 1px solid #ddd6fe; border-radius: 999px; font-size: 11px; font-weight: 600; letter-spacing: .05em; padding: 5px 14px; }
+  .pulse-dot { width: 8px; height: 8px; border-radius: 50%; background: #8b5cf6; animation: pulse 1.4s ease-in-out infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.75)} }
+
+  header { border-bottom: 2px solid #E7E5E4; padding-bottom: 24px; margin-bottom: 28px; }
+  .org { font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: #78716C; margin-bottom: 6px; }
+  h1 { font-size: 26px; font-weight: 700; line-height: 1.25; color: #1C1917; margin-bottom: 14px; }
+
+  .awaiting-banner { background: linear-gradient(135deg, #F5F0FF 0%, #EDE9FE 100%); border: 1.5px dashed #a78bfa; border-radius: 12px; padding: 16px 20px; margin-bottom: 28px; display: flex; align-items: center; gap: 14px; }
+  .awaiting-icon { font-size: 28px; flex-shrink: 0; }
+  .awaiting-title { font-size: 13px; font-weight: 700; color: #5b21b6; margin-bottom: 2px; }
+  .awaiting-sub { font-size: 12px; color: #7c3aed; }
+
+  .meta-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 24px; }
+  .meta-item { background: #F5F5F4; border-radius: 10px; padding: 12px 16px; }
+  .meta-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: #A8A29E; margin-bottom: 3px; }
+  .meta-value { font-size: 13px; font-weight: 600; color: #292524; }
+  .meta-value.amount { color: #7c3aed; font-size: 17px; }
+
+  h2 { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: #57534E; margin-bottom: 12px; }
+
+  .section { margin-bottom: 24px; }
+  .body-text { font-size: 14px; line-height: 1.8; color: #44403C; }
+  .body-text strong { color: #292524; font-weight: 600; }
+
+  /* Donor profile */
+  .profile-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 24px; }
+  .profile-item { background: #F5F5F4; border-radius: 10px; padding: 14px 16px; }
+  .profile-item .label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: #A8A29E; margin-bottom: 5px; }
+  .profile-item .value { font-size: 13px; color: #44403C; line-height: 1.5; }
+
+  /* Payment schedule */
+  .schedule { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 24px; }
+  .schedule thead tr { background: #F5F5F4; }
+  .schedule th { text-align: left; padding: 10px 14px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: #78716C; }
+  .schedule td { padding: 10px 14px; border-bottom: 1px solid #F0EFEE; color: #44403C; }
+  .schedule tr:last-child td { border-bottom: none; }
+  .schedule td.amt { font-weight: 600; color: #7c3aed; }
+  .schedule td.trigger { font-size: 12px; color: #78716C; }
+
+  /* Conditions */
+  .conditions { background: #FAFAF9; border: 1px solid #E7E5E4; border-radius: 12px; padding: 20px 24px; margin-bottom: 20px; }
+  .condition-row { display: flex; align-items: flex-start; gap: 10px; padding: 10px 0; border-bottom: 1px solid #F0EFEE; font-size: 13px; color: #44403C; line-height: 1.6; }
+  .condition-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .signal { font-size: 15px; flex-shrink: 0; margin-top: 1px; }
+  .condition-detail { font-size: 11px; color: #78716C; margin-top: 3px; }
+
+  /* IP clause highlight */
+  .ip-block { background: #FFF7ED; border-left: 3px solid #f59e0b; border-radius: 0 10px 10px 0; padding: 14px 18px; margin: 10px 0; font-size: 13px; color: #44403C; line-height: 1.6; }
+  .ip-block strong { color: #92400e; }
+
+  /* Questions */
+  .questions { background: #FFFDF7; border: 1px solid #FDE68A; border-radius: 12px; padding: 20px 24px; margin-bottom: 24px; }
+  .questions ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+  .questions li { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; color: #44403C; line-height: 1.6; }
+  .questions li::before { content: '?'; font-weight: 800; color: #f59e0b; flex-shrink: 0; width: 16px; text-align: center; }
+
+  /* Intake chips */
+  .intake-row { display: flex; gap: 10px; margin-bottom: 28px; flex-wrap: wrap; }
+  .intake-chip { background: #F5F5F4; border-radius: 8px; padding: 7px 14px; font-size: 12px; color: #57534E; }
+  .intake-chip span { font-weight: 600; color: #292524; }
+
+  .signature { border-top: 1px solid #E7E5E4; padding-top: 20px; display: flex; justify-content: space-between; align-items: flex-end; }
+  .sig-name { font-weight: 700; font-size: 15px; }
+  .sig-title { font-size: 12px; color: #78716C; margin-top: 2px; }
+  .verdict-pending { font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; background: #F5F0FF; color: #7c3aed; border: 1px solid #ddd6fe; border-radius: 8px; padding: 6px 14px; display: flex; align-items: center; gap: 6px; }
+
+  @media print {
+    body { padding: 32px; background: white; }
+    .badge, .awaiting-banner, .conditions, .questions, .ip-block { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .pulse-dot { animation: none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="org">Donor Offer Document · MissionGuard AI Test Case #5 · PENDING ANALYSIS</div>
+  <h1>Gift Agreement Proposal<br/>TechBridge Ventures Foundation</h1>
+  <div class="badge"><span class="pulse-dot"></span>AWAITING PLATFORM ANALYSIS — NO DECISION TAKEN</div>
+</header>
+
+<div class="awaiting-banner">
+  <div class="awaiting-icon">🔍</div>
+  <div>
+    <div class="awaiting-title">Submitted for Ethical Scoring — Verdict Unknown</div>
+    <div class="awaiting-sub">Offer received April 23, 2026. Board has 45 days to respond. MissionGuard AI analysis required before any internal discussion.</div>
+  </div>
+</div>
+
+<!-- Metadata -->
+<div class="meta-grid">
+  <div class="meta-item"><div class="meta-label">Donor Entity</div><div class="meta-value">TechBridge Ventures Foundation</div></div>
+  <div class="meta-item"><div class="meta-label">Total Gift Value</div><div class="meta-value amount">$2,400,000</div></div>
+  <div class="meta-item"><div class="meta-label">Gift Term</div><div class="meta-value">4 years (2026–2030)</div></div>
+  <div class="meta-item"><div class="meta-label">Recipient Program</div><div class="meta-value">Digital Equity Initiative — Central Valley</div></div>
+  <div class="meta-item"><div class="meta-label">Date Received</div><div class="meta-value">April 23, 2026</div></div>
+  <div class="meta-item"><div class="meta-label">Response Deadline</div><div class="meta-value">June 7, 2026</div></div>
+</div>
+
+<!-- Donor Background -->
+<div class="section">
+  <h2>Donor Profile &amp; Background</h2>
+  <div class="profile-grid">
+    <div class="profile-item">
+      <div class="label">Entity Type</div>
+      <div class="value">Corporate foundation (501(c)(3)), established 2019. Parent company: TechBridge Ventures Inc. — Series D AI infrastructure startup, $320M raised to date.</div>
+    </div>
+    <div class="profile-item">
+      <div class="label">Primary Business</div>
+      <div class="value">AI-powered workforce analytics SaaS platform. Direct commercial interests in nonprofit sector talent management tools.</div>
+    </div>
+    <div class="profile-item">
+      <div class="label">Prior Giving Record</div>
+      <div class="value">12 grants totalling $8.4M since 2020. Two grantees have publicly cited programmatic interference mid-grant.</div>
+    </div>
+    <div class="profile-item">
+      <div class="label">Regulatory Status</div>
+      <div class="value">No current investigations. One FTC inquiry (2024) regarding data practices — closed without action.</div>
+    </div>
+    <div class="profile-item">
+      <div class="label">Political Exposure</div>
+      <div class="value">CEO serves on California Governor's AI Advisory Task Force. Foundation has funded two ballot initiative campaigns (Prop 47-B, Prop 52).</div>
+    </div>
+    <div class="profile-item">
+      <div class="label">990 Available</div>
+      <div class="value">Yes — FY2023 990 filed. Available on ProPublica Nonprofit Explorer.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Payment Schedule -->
+<div class="section">
+  <h2>Proposed Disbursement Schedule</h2>
+  <table class="schedule">
+    <thead>
+      <tr><th>Tranche</th><th>Amount</th><th>Date</th><th>Release Trigger</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Year 1 — Launch</td><td class="amt">$700,000</td><td>Aug 1, 2026</td><td class="trigger">Signed agreement + program launch confirmation</td></tr>
+      <tr><td>Year 2 — Growth</td><td class="amt">$600,000</td><td>Jan 15, 2027</td><td class="trigger">Year 1 KPI report submitted to donor</td></tr>
+      <tr><td>Year 3 — Scale</td><td class="amt">$600,000</td><td>Jan 15, 2028</td><td class="trigger">Year 2 KPI report + joint review meeting</td></tr>
+      <tr><td>Year 4 — Completion</td><td class="amt">$500,000</td><td>Jan 15, 2029</td><td class="trigger">Final impact assessment co-authored with donor</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Conditions -->
+<div class="section">
+  <h2>Terms &amp; Conditions — Mixed Signals</h2>
+  <div class="conditions">
+    <div class="condition-row"><span class="signal">✅</span><div>No naming rights or public co-branding required.<div class="condition-detail">Donor explicitly waives right to use program name in marketing materials.</div></div></div>
+    <div class="condition-row"><span class="signal">✅</span><div>Restricted to program delivery costs only — no overhead cap specified.<div class="condition-detail">Budget flexibility retained by recipient within program scope.</div></div></div>
+    <div class="condition-row"><span class="signal">✅</span><div>No formal board seat or voting governance role requested.</div></div>
+    <div class="condition-row"><span class="signal">⚠️</span><div>Donor requests <strong>access to raw participant data</strong> (anonymized) for internal AI model training purposes.<div class="condition-detail">Specifically: employment outcomes, skill-gap assessments, and demographic breakdowns of program participants.</div></div></div>
+    <div class="condition-row"><span class="signal">⚠️</span><div>Year 3 and Year 4 disbursements require a <strong>"joint review meeting"</strong> with TechBridge's Head of Impact and two board members.<div class="condition-detail">No veto power stated — but meeting outcome could informally condition future tranches.</div></div></div>
+    <div class="condition-row"><span class="signal">⚠️</span><div>Final impact assessment (Year 4) must be <strong>co-authored with donor</strong> and published jointly.<div class="condition-detail">Recipient retains editorial control — but donor has right to request revisions before publication.</div></div></div>
+    <div class="condition-row"><span class="signal">❓</span><div>Grant agreement includes a <strong>"Technology Alignment Clause"</strong> (Section 7.3): recipient agrees not to publicly endorse competing workforce analytics platforms during the gift term.</div></div>
+  </div>
+
+  <div class="ip-block">
+    <strong>⚠️ Key IP Concern — Section 9.1 (Verbatim):</strong><br/>
+    "Recipient grants TechBridge Ventures Foundation a non-exclusive, royalty-free, perpetual license to use any anonymized program data, findings, methodologies, and tools developed under this grant for the Foundation's and its parent company's research and product development purposes."
+  </div>
+</div>
+
+<!-- Open Questions -->
+<div class="section">
+  <h2>Open Questions for Platform Analysis</h2>
+  <div class="questions">
+    <ul>
+      <li>Does the data-sharing clause for AI model training create an exploitative relationship with program participants who did not consent to commercial use?</li>
+      <li>Does the Technology Alignment Clause (Section 7.3) restrict recipient's programmatic independence or advocacy rights?</li>
+      <li>Does co-authorship of the final report constitute donor control over research outputs?</li>
+      <li>Is the parent company's commercial interest in workforce data a conflict of interest that undermines mission alignment?</li>
+      <li>Do the prior grantee interference reports constitute a pattern of concern under the Virtue Ethics lens?</li>
+      <li>Does the CEO's government advisory role create a reputational entanglement risk?</li>
+      <li>Do milestone-gated disbursements give the donor de-facto programmatic control without formal governance rights?</li>
+    </ul>
+  </div>
+</div>
+
+<div class="intake-row">
+  <div class="intake-chip">Logged by: <span>Development Officer</span></div>
+  <div class="intake-chip">Source: <span>Unsolicited — direct outreach</span></div>
+  <div class="intake-chip">Status: <span>Pending analysis</span></div>
+  <div class="intake-chip">Deadline: <span>June 7, 2026</span></div>
+  <div class="intake-chip">Priority: <span>High — large gift</span></div>
+</div>
+
+<div class="signature">
+  <div>
+    <div class="sig-name">Priya Nambiar</div>
+    <div class="sig-title">Chief Philanthropy Officer · TechBridge Ventures Foundation</div>
+  </div>
+  <div class="verdict-pending">⏳ PENDING · Platform to decide</div>
+</div>
+
+</body>
+</html>

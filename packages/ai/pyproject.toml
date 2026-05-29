@@ -1,0 +1,13 @@
+[project]
+name = "missionguard-ai"
+version = "0.1.0"
+description = "MissionGuard AI – Ethical Scoring Engine"
+requires-python = ">=3.12"
+dependencies = [
+  "pydantic>=2.10",
+  "langchain>=0.3",
+  "langchain-anthropic>=0.3",
+  "langgraph>=0.3",
+  "anthropic>=0.42",
+  "numpy>=2.2",
+]
