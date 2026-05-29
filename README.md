@@ -6,14 +6,6 @@ Operationalises the **Modified Acceptance (Pilot Phase)** framework from the Mar
 
 ---
 
-## Screenshots
-
-| Product Overview | Donor Intake |
-|------------------|--------------|
-| ![Product overview](./docs/screenshots/product-overview.png) | ![Donor intake](./docs/screenshots/intake.png) |
-
----
-
 ## Repository Layout
 
 ```
